@@ -23,18 +23,27 @@ Run the following command to install the necessary dependencies:
 
 ```bash
 npm install
-Start the Backend Server
+
+This will install both frontend and backend dependencies.
+
+2. Start the Backend Server
 Run the following command to start the mock backend server with json-server:
 
 npm run backend
 
- Start the Frontend Development Server
+This will start the backend on http://localhost:5000.
+
+3. Start the Frontend Development Server
 After the backend is running, you can start the frontend application by running:
 
-bash
 npm run dev
-
 This will start the Vue 3 application and open it in your browser at http://localhost:3000.
+
+4. Preview Production Build
+To preview the production build, run:
+
+npm run preview
+This will serve the production version of the application.
 
 Backend API Endpoints
 Here are the available API endpoints:
@@ -46,29 +55,10 @@ PUT /orders/:id: Update an order by ID.
 DELETE /orders/:id: Delete an order by ID.
 This backend is powered by json-server and uses a db.json file for storing data.
 
-Available Scripts
-In the project directory, you can run the following commands:
-
-Development: npm run dev – Starts the development server and opens the app in the browser.
-Build: npm run build – Builds the project for production.
-Preview: npm run preview – Previews the production build.
-Type-Check: npm run type-check – Runs TypeScript type checking on the codebase.
-Lint: npm run lint – Runs ESLint to check for code quality issues.
-Format: npm run format – Formats the code using Prettier.
-Backend: npm run backend – Starts the mock backend using json-server.
-Troubleshooting
-If you encounter any issues, here are some common solutions:
-
-Backend not starting: Make sure the db.json file exists and json-server is installed. Run npm install if necessary.
-Frontend not loading: Ensure that the development server is running by executing npm run dev.
-API not responding: Check that the backend server is running and accessible at http://localhost:5000.
-TypeScript errors: Run npm run type-check to check for TypeScript errors and resolve them.
-Code formatting issues: Use npm run format to format the codebase with Prettier.
-
 License
 This project is licensed under the MIT License – see the LICENSE file for details.
 
 Contact
 For any questions or support, feel free to contact the project maintainer:
 
-Your Name – azamatrozumow@gmail.com
+Your Name – Azamat
