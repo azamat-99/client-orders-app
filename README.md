@@ -1,3 +1,16 @@
+
+## Screenshots
+
+### Home Page
+![Home Page](./home.png)
+
+### Login
+![login](./login.png)
+
+### Adding Page
+![add](./add.png)
+
+
 # Vue Project
 
 This is a Vue 3 project using **Vite** as the build tool and **Pinia** for state management. It uses **json-server** to simulate a backend, making it easy to develop and test without requiring a real API. The application is built using TypeScript, and we are using **Element Plus** for UI components.
