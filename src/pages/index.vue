@@ -46,10 +46,10 @@ const beforeDelete = (row:IOrder) => {
 
 <template>
   <div class="container border rounded-lg">
-    <div class="flex items-center  px-3  py-3 justify-between w-full">
-      <h1>Zakazy</h1>
-      <ElButton @click="beforeAdd" type="primary">dobawit</ElButton>
-      <Dialog width="700" v-model="dialogs.isAdd" title="gosmak">
+    <div class="flex items-center px-3 py-3 justify-between w-full">
+      <h1 class="font-semibold font-lg">Заказы</h1>
+      <ElButton @click="beforeAdd" type="primary">Добавить</ElButton>
+      <Dialog width="700" v-model="dialogs.isAdd" title="Добавить заказ">
         <template #content>
           <FormOrder @submit="storeOrder.handleSubmit('orders', 'POST', formOrders)" />
         </template>
@@ -58,18 +58,17 @@ const beforeDelete = (row:IOrder) => {
     <el-table :data="orders" :row-class-name="tableRowClassName"
     height="600"
       header-cell-class-name="!bg-gray1 overf text-text !border-y header_cell">
-      <el-table-column label="Ady" prop="lastname"> </el-table-column>
-      <el-table-column width="150" label="Email" prop="email"> </el-table-column>
-      <el-table-column label="Telefon belgisi" prop="phone"> </el-table-column>
-      <el-table-column label="Nirden" prop="from"> </el-table-column>
-      <el-table-column label="Nira" prop="to"> </el-table-column>
-      <el-table-column label="Yukun ady" prop="goodname"> </el-table-column>
-      <el-table-column label="Yukin gornushi" prop="goodCategory"> </el-table-column>
-      <el-table-column label="Senesi" prop="date"> </el-table-column>
-      <el-table-column label="Gutaryan senesi" prop="date"> </el-table-column>
-      <el-table-column label="Action" prop="action">
-        <template #default="scope"
-        >
+      <el-table-column label="Фамилия" prop="lastname"> </el-table-column>
+      <el-table-column width="150" label="Электронная почта" prop="email"> </el-table-column>
+      <el-table-column label="Телефон" prop="phone"> </el-table-column>
+      <el-table-column label="Откуда" prop="from"> </el-table-column>
+      <el-table-column label="Куда" prop="to"> </el-table-column>
+      <el-table-column label="Название товара" prop="goodname"> </el-table-column>
+      <el-table-column label="Категория товара" prop="goodCategory"> </el-table-column>
+      <el-table-column label="Дата заказа" prop="date"> </el-table-column>
+      <el-table-column label="Дата доставки" prop="expireDate"> </el-table-column>
+      <el-table-column label="Действие" prop="action">
+        <template #default="scope">
         <div class="flex gap-4">
           <Edit :size="18" @click="beforeEdit(scope.row)" />
           <Trash :size="18" @click="beforeDelete(scope.row)" />
@@ -77,7 +76,7 @@ const beforeDelete = (row:IOrder) => {
         </template>
       </el-table-column>
     </el-table>
-    <Dialog width="700" v-model="dialogs.isUpdate" title="Uytgetmek">
+    <Dialog width="700" v-model="dialogs.isUpdate" title="Редактировать заказ">
       <template #content>
         <FormOrder @submit="storeOrder.handleSubmit('orders', 'PUT', formOrders)" />
       </template>

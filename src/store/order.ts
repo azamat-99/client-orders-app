@@ -48,7 +48,7 @@ export const useOrderStore = defineStore("order", () => {
       await requestApi(path, method, {}, form);
       dialogs.isAdd = dialogs.isUpdate = dialogs.isBlock = false;
       fetchData("orders");
-      toast(`uspeshno`, { type: "success" });
+      toast(`Успешно`, { type: "success" });
     } catch (error: any) {
       console.error(error);
       toast(`error`, { type: "error" });
